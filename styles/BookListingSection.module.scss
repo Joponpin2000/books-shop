@@ -1,0 +1,8 @@
+.BookListingSection {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin: 0 40px 10px;
+        gap: 40px 74px;
+    }
+}
