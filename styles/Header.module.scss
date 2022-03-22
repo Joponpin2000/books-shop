@@ -1,0 +1,50 @@
+.Header {
+    margin: 25px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+
+   .headerDisplay {
+    display: flex;
+    align-items: center;
+        .appDetails {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+
+        h3 {
+            font-size: 18px;
+            margin-bottom: 3px;
+        }
+        h5 {
+            color: #AAAAAA;
+            font-size: 12;
+            font-style: italic;
+        }
+    }
+   }
+
+    .actions {
+    display: flex;
+    align-items: center;
+
+    .cart {
+        margin-left: 29px;
+        position: relative;
+
+    .badge {
+        position: absolute;
+        color: white;
+       left: calc(50% - 20px/2 + 10px);
+top: calc(50% - 20px/2 - 10px);
+
+background: #65C100;
+border-radius: 10px;
+width: 20px;
+height: 20px;
+text-align: center;
+    }
+    }
+    }
+}
