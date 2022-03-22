@@ -15,7 +15,7 @@ const BookListingSection = ({}: PropTypes) => {
 
         <div className={styles.container}>
             {bookList.data.map((book, bookIndex) => (
-                <BookCard book={book} index={`book_item-${bookIndex}`} />
+                <BookCard book={book} key={`book_item-${bookIndex}`} />
             ))}
         </div>
            

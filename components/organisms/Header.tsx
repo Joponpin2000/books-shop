@@ -18,6 +18,7 @@ const Header = () => {
         </div>
       </div>
       <SearchInput
+      
         triggerSearch={() => {}}
         placeholder="Search books, genres, authors, etc."
       />

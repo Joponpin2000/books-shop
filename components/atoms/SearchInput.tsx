@@ -3,7 +3,6 @@ import SearchIcon from "./vectors/SearchIcon";
 import styles from "../../styles/SearchInput.module.scss"
 
 interface PropTypes {
-  value?: string;
   placeholder?: string;
   onChange?: Function;
   triggerSearch: (search: string) => void;
@@ -11,14 +10,15 @@ interface PropTypes {
 
 function SearchInput({
   placeholder,
-  value,
   onChange = () => {},
   triggerSearch = () => {},
 }: PropTypes) {
 
+  const [search, setSearch] = useState<string>("");
+
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    triggerSearch(value);
+    triggerSearch(search);
   };
 
   return (
@@ -29,9 +29,9 @@ function SearchInput({
         <input
           type="search"
           placeholder={placeholder}
-          value={value}
+          value={search}
           onChange={(e) => {
-            if (e.target.value === "") triggerSearch(value ?? "");
+            if (e.target.value === "") triggerSearch(search ?? "");
             onChange(e.target.value);
           }}
          
