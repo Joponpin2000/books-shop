@@ -18,7 +18,7 @@ const Home: NextPage = () => {
 
       <section>
         <FeatureSection />
-        <BookListingSection />
+        {/* <BookListingSection /> */}
       </section>
 
     </div>
