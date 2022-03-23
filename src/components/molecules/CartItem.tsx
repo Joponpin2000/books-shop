@@ -2,7 +2,7 @@ import styles from "../../styles/CartItem.module.scss";
 import { Imager } from "../../utils/helpers";
 import { useDispatch } from "react-redux";
 import { addToCart,removeFromCart } from "../../redux/actions/cartActions";
-import { ICartType } from "../../redux/reducers/cartReducer";
+import { ICartType } from "../../redux/actions/types";
 interface IProps {
   item: ICartType;
 }

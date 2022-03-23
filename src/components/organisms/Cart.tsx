@@ -5,14 +5,14 @@ import CartItem from "../molecules/CartItem";
 import CartIcon from "../atoms/vectors/CartIcon";
 import Button from "../atoms/Button";
 import { useSelector } from "react-redux";
-import { IReduxState } from '../../redux/reducers/cartReducer';
 import {totalCartAmount} from "../../utils/helpers";
+import { IReduxState } from "../../redux/actions/types";
 interface IProps {
   close: MouseEventHandler<HTMLSpanElement>;
 }
 
 const Cart = ({ close }: IProps) => { 
-  const { cartItems} = useSelector((state: IReduxState) => state);
+  const { cartItems } = useSelector((state: IReduxState) => state.cart);
 
   const cartRef: any = useRef(null);
 

@@ -1,27 +1,19 @@
-import { IBookType } from "../../utils/helpers";
 import {
   CART_ADD_ITEM,
   CART_REMOVE_ITEM,
-  IACTIONTYPE
+  IACTIONTYPE,
+  ICartReduxState,
 } from "../actions/types";
 
-export interface ICartType {
-    book: IBookType;
-  quantity: number;
-  
-  }
-
-export interface IReduxState {
-  cartItems: ICartType[];
- }
-
-const defaultState: IReduxState = {
-  cartItems:[],
+const defaultState: ICartReduxState = {
+  cartItems: [],
 };
 
-export default function cartReducer(state: IReduxState = defaultState, action: IACTIONTYPE) {
+export default function cartReducer(
+  state: ICartReduxState = defaultState,
+  action: IACTIONTYPE
+) {
   switch (action.type) {
-   
     case CART_ADD_ITEM:
       const item = action.payload;
       const product = state.cartItems.find((x) => x.book.id === item.book.id);

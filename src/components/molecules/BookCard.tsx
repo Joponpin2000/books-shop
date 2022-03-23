@@ -1,7 +1,6 @@
 import PersonsIcon from "../atoms/vectors/PersonsIcon";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/actions/cartActions";
-import StarIcon from "../atoms/vectors/StarIcon";
 import StarRating from "./StarRating";
 import HeartIcon from "../atoms/vectors/HeartIcon";
 import { IBookType, Imager, parseDate, renderTags } from "../../utils/helpers";

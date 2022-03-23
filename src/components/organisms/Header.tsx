@@ -6,21 +6,12 @@ import LightIcon from "../atoms/vectors/LightIcon";
 import styles from "../../styles/Header.module.scss";
 import Cart from "./Cart";
 import { useSelector } from "react-redux";
-import { IReduxState } from '../../redux/reducers/cartReducer';
-interface IProps {
-  search?: string;
-  setSearch:  (search: string) => void;
-  triggerSearch: (search: string) => void;
-  searchActionHandler: Function;
-}
+import { IReduxState } from "../../redux/actions/types";
 
-const Header = ({
-   search = "",
-    setSearch = () => { },
-     triggerSearch = () => { },
-  searchActionHandler = () => { }
-}: IProps) => {
-    const { cartItems } = useSelector((state: IReduxState) => state);
+const Header = () => {
+  const { cart, searcher } = useSelector((state: IReduxState) => state);
+  const { cartItems } = cart;
+  const { search } = searcher;
   const [openCart, setOpenCart] = useState<boolean>(false);
 
   return (
@@ -34,9 +25,6 @@ const Header = ({
       </div>
       <SearchInput
         value={search}
-        onChange={setSearch}
-        actionHandler={searchActionHandler}
-        triggerSearch={triggerSearch}
         placeholder="Search books, genres, authors, etc."
       />
       <div className={styles.actions}>
@@ -55,4 +43,4 @@ const Header = ({
   );
 };
 
-export default Header
+export default Header;

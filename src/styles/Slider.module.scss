@@ -3,8 +3,20 @@
 }
 
 .slide {
- position: relative;
- height: 100%;
+  position: relative;
+  height: 100%;
+}
+
+.hideOverlay {
+   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 90%;
+  height: 100%;
+  padding: 38px 30px 0 30px;
+  opacity: 0;
+  transition: all .4s;
 }
 
 .bookOverlay {
@@ -12,74 +24,72 @@
   color: #fff;
   cursor: pointer;
   top: 0;
-  left:0;
+  left: 0;
   right: 0;
   width: 90%;
   height: 100%;
   z-index: 100;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.607988) 0%, #000000 79.7%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.607988) 0%,
+    #000000 79.7%
+  );
   padding: 38px 30px 0 30px;
+  transition: all .4s;
 
   .available {
-    color: #65C100;
+    color: #65c100;
     font-size: 12px;
+    margin-bottom: 19px;
   }
 
   .groupBox {
     margin-top: 19px;
 
     .groupTitle {
-    font-weight: 700;
-    margin-bottom: 2px;
+      font-weight: 700;
+      margin-bottom: 2px;
     }
 
-  .title {
-    font-weight: 700;
-    font-size: 18px;
-    margin-bottom: 6px;
-  }
+    .title {
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
 
-  .subtitle {
-    font-size: 12px;
-  }
-
+    .subtitle {
+      font-size: 12px;
+    }
   }
 
   .groupRow {
-            margin-top: 19px;
-            display: flex;
-            align-items: center;
+    margin-top: 19px;
+    display: flex;
+    align-items: center;
 
-            .box {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-right: 12.33px;
+    .box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 12.33px;
 
-                .label {
-                    margin-top: 4px;
-                }
-            }
+      .label {
+        margin-top: 4px;
+      }
+    }
 
-             .ratingBox {
-                padding-left: 12.33px;
-                border-left: 1px solid #333333;
+    .ratingBox {
+      padding-left: 12.33px;
+      border-left: 1px solid #333333;
 
-
-                .ratingStars {
-                    display: flex;
-                    align-items: center;
-                    margin-top: 5.6px;
-                }
-            }
-
-
-
-          
-            }
-
+      .ratingStars {
+        display: flex;
+        align-items: center;
+        margin-top: 5.6px;
+      }
+    }
   }
-
+}
 
 .slide img {
   width: 90%;
