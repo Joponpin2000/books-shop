@@ -1,7 +1,6 @@
 .CartItem {
     padding: 24px 0;
     border-bottom: 1px solid #EEEEEE;
-background: #FFFFFF;
 font-size: 12px;
 
 .container {
@@ -65,6 +64,18 @@ font-size: 12px;
             box-sizing: border-box;
             cursor: pointer;
         }
+        .disabledBtn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #F9F9FB;
+            width: 30px;
+            height: 30px;
+            border: 1px solid #DDDDDD;
+            box-sizing: border-box;
+            cursor: not-allowed;
+
+        }
         .valueBox {
             display: flex;
             align-items: center;
@@ -75,6 +86,10 @@ font-size: 12px;
             border: 1px solid #DDDDDD;
             box-sizing: border-box;
         }
+    }
+
+    .totalprice {
+        font-weight: 700;
     }
 }
 }

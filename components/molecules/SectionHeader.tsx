@@ -1,11 +1,11 @@
 
 import styles from "../../styles/SectionHeader.module.scss";
 
-interface PropTypes {
+interface IProps {
     title: string;
 }
 
-const SectionHeader = ({title}: PropTypes) => {
+const SectionHeader = ({title}: IProps) => {
     return (
         <div className={styles.SectionHeader}>
             <h4>{title}</h4>

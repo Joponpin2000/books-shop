@@ -1,24 +1,30 @@
-import React, { useState } from "react";
+import React, {FormEvent} from "react";
+import CloseIcon from "./vectors/CloseIcon";
 import SearchIcon from "./vectors/SearchIcon";
 import styles from "../../styles/SearchInput.module.scss"
 
-interface PropTypes {
+interface IProps {
+  value?: string;
   placeholder?: string;
   onChange?: Function;
   triggerSearch: (search: string) => void;
+ actionHandler: Function;
 }
-
 function SearchInput({
+    value = "",
+    actionHandler = () => {},
   placeholder,
   onChange = () => {},
   triggerSearch = () => {},
-}: PropTypes) {
+}: IProps) {
 
-  const [search, setSearch] = useState<string>("");
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: FormEvent) => {
+
     e.preventDefault();
-    triggerSearch(search);
+    
+    triggerSearch(value);
+    
   };
 
   return (
@@ -27,18 +33,24 @@ function SearchInput({
         onSubmit={handleSubmit}
       >
         <input
-          type="search"
+          type="text"
           placeholder={placeholder}
-          value={search}
+          value={value}
           onChange={(e) => {
-            if (e.target.value === "") triggerSearch(search ?? "");
+            if (e.target.value !== '') {
+                actionHandler('search')
+            }else{
+              actionHandler('cancel')
+            }
             onChange(e.target.value);
           }}
+       
          
         />
-       <span className={styles.searchIcon}>
-          <SearchIcon />
+      <span className={styles.searchIcon} onClick={() => value !== '' ? actionHandler("cancel") : () => { }}>
+         {value ?<CloseIcon/> : <SearchIcon />}
        </span>
+        
       </form>
   );
 }

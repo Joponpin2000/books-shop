@@ -6,46 +6,57 @@ export const Imager  = Image;
       const d = new Date(dateString);
       return d.getFullYear();
     }
-
-// export interface  IBookType {
-//       id: number,
-//       title: string,
-//       subtitle: string,
-//       publisher: string,
-//       release_date: string,
-//       number_of_purchases: number,
-//       likes: number,
-//       rating: number,
-//       price: number,
-//       currency: string,
-//       available_copies: number,
-//       full_description: string,
-//       featured: null,
-//       tag: null,
-//       genre: null,
-//       published_at: string,
-//       created_at: string,
-//       updated_at: string,
-//       image_url: string,
-//       authors: 
-//         {
-//           id: number,
-//           name: string,
-//           history: string,
-//           rating: null,
-//           book: number,
-//           published_at: string,
-//           created_at: string,
-//           updated_at: string
-//         }[],
-//       tags: 
-//         {
-//           id: number,
-//           name: string,
-//           published_at: string,
-//           created_at: string,
-//           updated_at: strin
-//         }
-//       [],
-//       genres: []
-//     }
+export const totalCartAmount = (cartItems: any[]) => {
+  return Number(
+    cartItems.reduce((acc, item) => {
+       
+      const itemAmount = item.quantity * item.book.price;
+      return acc + itemAmount;
+    }, 0)
+  ).toLocaleString();
+};
+export interface IBookType {
+  id: number;
+  title: string;
+  subtitle: string | null;
+  publisher: string;
+  release_date: string;
+  number_of_purchases: number;
+  likes: number;
+  rating: number;
+  price: number;
+  currency: string;
+  available_copies: number;
+  full_description: string;
+  featured: boolean | null;
+  tag: string | null;
+  genre: string | null;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  image_url: string;
+  authors: {
+    id: number;
+    name: string;
+    history: string;
+    rating: number | string | null;
+    book: number;
+    published_at: string;
+    created_at: string;
+    updated_at: string;
+  }[];
+  tags: {
+    id: number;
+    name: string;
+    published_at: string;
+    created_at: string;
+    updated_at: string;
+  }[];
+  genres: {
+    id: number;
+    name: string;
+    published_at: string;
+    created_at: string;
+    updated_at: string;
+  }[];
+}

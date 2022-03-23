@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import styles from "../../styles/Button.module.scss"
 
-interface PropTypes {
+interface IProps {
   text?: string;
   iconPosition?: "left" | "right";
   children?: ReactElement | string;
@@ -14,7 +14,7 @@ const index = ({
   children,
   type = "submit",
   onClick = () => {},
-}: PropTypes) => {
+}: IProps) => {
  
   return (
     <button type={type} onClick={(e) => onClick(e)} className={styles.Button}>

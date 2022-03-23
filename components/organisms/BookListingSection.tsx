@@ -4,10 +4,8 @@ import BookCard from "../molecules/BookCard";
 import bookList from "../../utils/data.json";
 import styles from "../../styles/BookListingSection.module.scss";
 
-interface PropTypes {
-}
 
-const BookListingSection = ({}: PropTypes) => {
+const BookListingSection = () => {
     return (
         <div className={styles.BookListingSection}>
            
