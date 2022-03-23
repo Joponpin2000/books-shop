@@ -8,7 +8,6 @@ import bookList from "../../utils/data.json"
 
 const HomeView = () => {
 
-   
       const [search, setSearch] = useState<string>("");
       const [openSearch, setOpenSearch] = useState<boolean>(false);
 

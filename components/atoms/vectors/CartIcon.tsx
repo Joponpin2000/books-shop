@@ -1,11 +1,11 @@
-import * as React from "react"
+import *  as React from "react"
 import { SVGProps } from "react"
 interface ICartProps extends SVGProps<SVGSVGElement>{
-  small?: boolean;
+  size?: "sm" | "md";
 }
 
 const SvgComponent = (props: ICartProps) =>
-  props.small ? (
+  props.size === "sm" ? (
     <svg
       width="1.125rem"
       height="1.125rem"

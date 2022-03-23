@@ -7,7 +7,8 @@ import {
 
 export interface ICartType {
     book: IBookType;
-    quantity: number;
+  quantity: number;
+  
   }
 
 export interface IReduxState {

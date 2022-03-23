@@ -15,6 +15,13 @@ export const totalCartAmount = (cartItems: any[]) => {
     }, 0)
   ).toLocaleString();
 };
+
+export 
+  const renderTags = (array: IBookType["tags"]) => {
+    var tags = array.map((a) => a.name);
+    return tags.join(", ");
+  };
+  
 export interface IBookType {
   id: number;
   title: string;
