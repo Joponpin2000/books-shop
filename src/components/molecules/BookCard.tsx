@@ -2,9 +2,9 @@ import PersonsIcon from "../atoms/vectors/PersonsIcon";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/actions/cartActions";
 import StarIcon from "../atoms/vectors/StarIcon";
-import StarRating from "../molecules/StarRating";
+import StarRating from "./StarRating";
 import HeartIcon from "../atoms/vectors/HeartIcon";
-import {IBookType, Imager, parseDate,renderTags } from "../../utils/helpers";
+import { IBookType, Imager, parseDate, renderTags } from "../../utils/helpers";
 import styles from "../../styles/BookCard.module.scss";
 import CartIcon from "../atoms/vectors/CartIcon";
 
@@ -14,7 +14,6 @@ interface IProps {
 
 const BookCard = ({ book }: IProps) => {
   const dispatch = useDispatch();
-
 
   return (
     <div className={styles.BookCard}>
@@ -40,8 +39,7 @@ const BookCard = ({ book }: IProps) => {
           </div>
           <div className={styles.ratingBox}>
             <p className={styles.ratingLabel}>Rating: {book.rating}</p>
-                            <StarRating  rate={Math.round(book.rating)} />
-
+            <StarRating rate={Math.round(book.rating)} />
           </div>
         </div>
 
@@ -55,13 +53,15 @@ const BookCard = ({ book }: IProps) => {
             <span className={styles.outOfStock}>Out of stock</span>
           )}
         </div>
-       {book.available_copies > 0 && <div
-          onClick={() => dispatch(addToCart(book, 1))}
-          className={styles.addToCart}
-        >
-          <CartIcon size="sm" />
-          <p>Add to Cart</p>
-        </div>}
+        {book.available_copies > 0 && (
+          <div
+            onClick={() => dispatch(addToCart(book, 1))}
+            className={styles.addToCart}
+          >
+            <CartIcon size="sm" />
+            <p>Add to Cart</p>
+          </div>
+        )}
       </div>
     </div>
   );

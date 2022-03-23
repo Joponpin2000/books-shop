@@ -1,6 +1,6 @@
 
 import SectionHeader from "../molecules/SectionHeader";
-import BookCarousel from "../organisms/BookCarousel";
+import BookCarousel from "./BookCarousel";
 import bookList from "../../utils/data.json";
 import styles from "../../styles/FeatureSection.module.scss";
 

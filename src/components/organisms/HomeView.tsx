@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import styles from '../../styles/Home.module.scss';
-import Header from "../../components/organisms/Header";
-import FeatureSection from "../../components/organisms/FeatureSection";
-import BookListingSection from "../../components/organisms/BookListingSection";
-import SearchBookListing from "../../components/organisms/SearchBookListing";
+import Header from "./Header";
+import FeatureSection from "./FeatureSection";
+import BookListingSection from "./BookListingSection";
+import SearchBookListing from "./SearchBookListing";
 import bookList from "../../utils/data.json"
 
 const HomeView = () => {
