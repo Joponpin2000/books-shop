@@ -57,10 +57,10 @@ const Header = () => {
         />
         </div>
 }
-      {/* <div className={openCart ? styles.cartModal : styles.hideModal}>
+      <div className={openCart ? styles.cartModal : styles.hideModal}>
         <Cart close={() => setOpenCart(false)} />
       </div>
-      {openCart && <div className={styles.cartOverlay}></div>} */}
+      {openCart && <div className={styles.cartOverlay}></div>}
     </header>
   );
 };

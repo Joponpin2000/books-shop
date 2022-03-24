@@ -115,6 +115,26 @@ display: none;
  .Header {
     padding: 15px;
  
+.cartModal {
+        position: absolute;
+        right: 0;
+        z-index: 200;
+        top: 0;
+    left: 0;
+    transition: all .7s;
+    background-color: gray;
+    width: 100%;
+    }
+    
+    .hideModal {
+        display: none;
+        position: absolute;
+        top: 0;
+    right: 0;
+    margin-right: -100vw;
+    transition: all 1s;
+
+    }
 .mobileSearchNav {
     display: flex;
     align-items: center;
@@ -160,4 +180,5 @@ display:none;
               display: none;
           }
  }
+ 
 }

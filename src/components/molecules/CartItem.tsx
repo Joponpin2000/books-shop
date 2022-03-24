@@ -15,7 +15,10 @@ const CartItem = ({ item }: IProps) => {
       <div className={styles.container}>
         <div className={styles.itemBox}>
           <div className={styles.cartImg}>
-            <Imager src={item.book.image_url} width="110px" height="183px" />
+            <img src={item.book.image_url} 
+              width="100%"
+          height="100%"
+           />
           </div>
           <div className={styles.cartDetails}>
             <div className={styles.itemDetails}>
@@ -23,6 +26,7 @@ const CartItem = ({ item }: IProps) => {
 
               <p>{item.book.publisher}</p>
             </div>
+            <span className={styles.spacer} />
             <button
               className={styles.removeBtn}
               onClick={() => dispatch(removeFromCart(item.book.id))}

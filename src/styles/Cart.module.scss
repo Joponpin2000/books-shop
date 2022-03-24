@@ -1,42 +1,49 @@
 .Cart {
   display: flex;
   flex-direction: column;
-    position: absolute;
-    right: 0;
-    width: 480px;
-    height: 100vh;
-    background-color: #FEFEFE;
-    border: 1px solid #EEEEEE;
-    overflow-y: hidden;
+  position: absolute;
+  right: 0;
+  width: 480px;
+  height: 100vh;
+  background-color: #fefefe;
+  border: 1px solid #eeeeee;
+  overflow-y: hidden;
 
+  .cartContent {
+    padding: 8px 40px 32px 33px;
+    overflow-y: auto;
+    height: 100%;
+  }
 
-        .cartContent {
-            padding: 8px 40px 32px 33px;
-            overflow-y: auto;
-            height: 100%;
-        }
+  .cartFooter {
+    padding: 20px 40px 20px 33px;
+    .totalRow {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 18px;
 
-.cartFooter {
-    padding:20px 40px 20px 33px;
-            .totalRow {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            margin-bottom: 18px;
-
-            
-            .value {
-                font-weight: 300;
-                font-size: 36px;
-            }
-        }
-}
-.emptyCart {
+      .value {
+        font-weight: 300;
+        font-size: 36px;
+      }
+    }
+  }
+  .emptyCart {
     text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
 }
 
+@media (max-width: 650px) {
+  .Cart {
+    width: 100%;
+
+    .cartContent {
+      padding: 0 30px 11px 30px;
+    }
+  }
 }
