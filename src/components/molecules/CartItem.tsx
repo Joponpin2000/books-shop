@@ -47,36 +47,38 @@ const CartItemActions = ({ item }: IProps) => {
   const dispatch = useDispatch();
   return (
     <div className={styles.itemActions}>
-      <div>
-        <span className={styles.priceTag}>${item.book.price}</span>
-        <div className={styles.actionBoxes}>
-          <button
-            className={styles.mutateBtn}
-            onClick={() =>
-              item.quantity > 1
-                ? dispatch(addToCart(item.book, item.quantity - 1))
-                : dispatch(removeFromCart(item.book.id))
-            }
-          >
-            -
-          </button>
-          <div className={styles.valueBox}>{item.quantity}</div>
-          <button
-            className={
-              item.quantity < item.book.available_copies
-                ? styles.mutateBtn
-                : styles.disabledBtn
-            }
-            onClick={() =>
-              item.quantity < item.book.available_copies
-                ? dispatch(addToCart(item.book, item.quantity + 1))
-                : {}
-            }
-          >
-            +
-          </button>
+      <>
+        <div className={styles.priceAction}>
+          <span className={styles.priceTag}>${item.book.price}</span>
+          <div className={styles.actionBoxes}>
+            <button
+              className={styles.mutateBtn}
+              onClick={() =>
+                item.quantity > 1
+                  ? dispatch(addToCart(item.book, item.quantity - 1))
+                  : dispatch(removeFromCart(item.book.id))
+              }
+            >
+              -
+            </button>
+            <div className={styles.valueBox}>{item.quantity}</div>
+            <button
+              className={
+                item.quantity < item.book.available_copies
+                  ? styles.mutateBtn
+                  : styles.disabledBtn
+              }
+              onClick={() =>
+                item.quantity < item.book.available_copies
+                  ? dispatch(addToCart(item.book, item.quantity + 1))
+                  : {}
+              }
+            >
+              +
+            </button>
+          </div>
         </div>
-      </div>
+      </>
       <span className={styles.totalprice}>
         ${(item.quantity * item.book.price).toLocaleString()}
       </span>
