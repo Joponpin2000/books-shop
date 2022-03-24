@@ -1,11 +1,13 @@
 import Image from "next/image";
+import { ICartReduxState } from "../redux/actions/types";
 
 export const Imager  = Image;
 
    export const parseDate = (dateString: string, full = false) => {
       const d = new Date(dateString);
       return full ? d.toDateString() : d.getFullYear();
-    }
+   }
+    
 export const totalCartAmount = (cartItems: any[]) => {
   return Number(
     cartItems.reduce((acc, item) => {
