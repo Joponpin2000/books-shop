@@ -19,7 +19,7 @@ store.subscribe(() => {
         <meta name="description" content="A flimsy book company" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Component {...pageProps} />
+      <Component {...pageProps}   />
     </Provider>
   );
 }

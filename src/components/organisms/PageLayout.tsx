@@ -40,7 +40,7 @@ const PageLayout = ({children}: IProps) => {
   }, [search])
   return (
     <div className={styles.PageLayout}>
-      <Header />
+      <Header  />
 
       <div className={styles.SectionSearchWrapper}>
         <section>
