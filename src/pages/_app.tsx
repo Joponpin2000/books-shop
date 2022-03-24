@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 store.subscribe(() => {
   saveState({
-    cart:store.getState().cart,
+    cart:store.getState().cart.cartItems,
   });
 })
   return (

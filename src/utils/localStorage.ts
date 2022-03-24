@@ -1,4 +1,4 @@
-import { ICartReduxState } from "../redux/actions/types";
+import { ICartType } from "../redux/actions/types";
 
 export const loadState = () => {
   try {
@@ -11,7 +11,7 @@ export const loadState = () => {
     return undefined;
   }
 };
-export const saveState = (state: {cart:ICartReduxState}) => {
+export const saveState = (state: {cart:ICartType[]}) => {
   try {
     const serialState = JSON.stringify(state);
     localStorage.setItem("qdxBooksCart", serialState);
