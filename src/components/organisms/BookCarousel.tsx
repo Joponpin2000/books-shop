@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useState, MouseEventHandler } from "react";
 import Slider from "react-slick";
 import LeftCaretIcon from "../atoms/vectors/LeftCaretIcon";
@@ -6,7 +7,7 @@ import styles from "../../styles/Slider.module.scss";
 import FeatureBookDetails from "../molecules/FeatureBookDetails";
 
 interface IProps {
-  device?: string;
+  device?: "mobile" | "laptop";
   books: IBookType[];
 }
 
@@ -59,7 +60,11 @@ const BookCarousel = ({ device, books }: IProps) => {
   };
 
   return (
-    <div className={styles.con}>
+    <div
+      className={
+        device === "mobile" ? styles.SmBookCarousel : styles.LgBookCarousel
+      }
+    >
       <Slider {...settings}>
         {books.map((book, index) => (
           <div
@@ -67,19 +72,23 @@ const BookCarousel = ({ device, books }: IProps) => {
             onMouseLeave={() =>
               setHoveredItem({ ...hoveredItem, active: false })
             }
-            key={`carouselindex-${index}`}
+            key={`carousel_index-${index}`}
             className={styles.slide}
           >
             <img src={book.image_url} />
-            <div
-              className={
-                hoveredItem.id === book.id && hoveredItem.active
-                  ? styles.bookOverlay
-                  : styles.hideOverlay
-              }
-            >
-              <FeatureBookDetails {...{ book }} />
-            </div>
+            <Link href="/[book]" as={`/${book.id}`}>
+              <a>
+                <div
+                  className={
+                    hoveredItem.id === book.id && hoveredItem.active
+                      ? styles.bookOverlay
+                      : styles.hideOverlay
+                  }
+                >
+                  <FeatureBookDetails {...{ book }} />
+                </div>
+              </a>
+            </Link>
           </div>
         ))}
       </Slider>

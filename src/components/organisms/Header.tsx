@@ -29,10 +29,10 @@ const Header = () => {
       />
       <div className={styles.actions}>
         <LightIcon />
-        <div onClick={() => setOpenCart(true)} className={styles.cart}>
+        <button onClick={() => setOpenCart(true)} className={styles.cart}>
           <CartIcon />
           <span className={styles.badge}>{cartItems.length}</span>
-        </div>
+        </button>
       </div>
 
       <div className={openCart ? styles.cartModal : styles.hideModal}>

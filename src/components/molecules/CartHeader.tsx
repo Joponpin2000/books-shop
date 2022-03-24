@@ -1,6 +1,6 @@
 import { MouseEventHandler } from "react";
 import styles from "../../styles/CartHeader.module.scss"
-import BackIcon from "../atoms/vectors/BackIcon";
+import BackButton from "../atoms/BackButton";
 import CartIcon from "../atoms/vectors/CartIcon";
 
 interface IProps {
@@ -10,10 +10,8 @@ interface IProps {
 const CartHeader = ({ close  }: IProps) => {
   return (
     <div className={styles.CartHeader}>
-      <span onClick={close} className={styles.back}>
-        <BackIcon />
-        <p>Back</p>
-      </span>
+      <BackButton onClick={close} />
+
       <span className={styles.title}>
         <p>Your Cart</p>
         <CartIcon />

@@ -53,13 +53,16 @@ const BookCard = ({ book }: IProps) => {
           )}
         </div>
         {book.available_copies > 0 && (
-          <div
-            onClick={() => dispatch(addToCart(book, 1))}
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              dispatch(addToCart(book, 1))
+            }}
             className={styles.addToCart}
           >
             <CartIcon size="sm" />
             <p>Add to Cart</p>
-          </div>
+          </button>
         )}
       </div>
     </div>

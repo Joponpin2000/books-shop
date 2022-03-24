@@ -35,12 +35,12 @@ function SearchInput({ value = "", placeholder }: IProps) {
           }
         }}
       />
-      <span
+      <button
         className={styles.searchIcon}
         onClick={() => (value !== "" ? dispatch(closeSearchModal()) : () => {})}
       >
         {value ? <CloseIcon /> : <SearchIcon />}
-      </span>
+      </button>
     </form>
   );
 }
