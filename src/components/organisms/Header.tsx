@@ -53,7 +53,7 @@ const Header = () => {
         </Link>
         <button onClick={() =>  dispatch(setCartModal((true)))} className={styles.cart}>
           <CartIcon />
-         {cartItems && <span className={styles.badge} >{cartItems?.length}</span>}
+          <span className={styles.badge} >{cartItems?.length}</span>
         </button>
       </div>
       {openMobileSearchBar && (
