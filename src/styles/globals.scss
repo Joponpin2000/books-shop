@@ -25,10 +25,17 @@ a {
   text-decoration: none;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+}
 
 @media (min-width: 1920px) {
   body {
     max-width: 1920px;
     margin: auto;
   }
+}
+@media(max-width:650px){
+
 }

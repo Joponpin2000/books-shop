@@ -1,9 +1,27 @@
 import * as React from "react"
 import { SVGProps } from "react"
 
-const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
+interface ILogoProps extends SVGProps<SVGSVGElement>{
+  size?: "sm" | "md";
+}
+const SvgComponent = (props: ILogoProps) => (
+  props.size === "sm" ?
   <svg
-    width="3.125rem"
+    width="2.5rem"
+    height="2.5rem"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <circle cx={20} cy={20} r={20} fill="#000" />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M18.138 9c-.645 0-1.08.562-1.08 1.115v17.762c0 .553.435 1.123 1.08 1.123h3.243c.645 0 1.081-.57 1.081-1.123V10.115c0-.553-.436-1.115-1.08-1.115h-3.244Zm.54 1.622h2.163v2.162h-2.162v-2.162Zm-7.597.54c-.585 0-1.081.496-1.081 1.081V27.92c0 .585.496 1.08 1.081 1.08h3.243c.585 0 1.081-.495 1.081-1.08V12.243c0-.585-.496-1.08-1.08-1.08H11.08Zm.54 1.622h2.163v1.621h-2.162v-1.621Zm7.058 1.621h2.162v9.19h-2.162v-9.19Zm-7.057 1.622h2.162v8.108h-2.162v-8.108Zm7.057 9.19h2.162v2.161h-2.162v-2.162Zm-7.057.54h2.162v1.621h-2.162v-1.621Zm15.53-.059 2.133-.357.267 1.6-2.132.356-.268-1.599Zm.796-8.354 1.07 6.398-2.133.357-1.07-6.398 2.133-.357Zm-2.668-2.842 2.133-.357.267 1.6-2.132.357-.267-1.6Zm-.8-1.51c-.547.091-.992.62-.892 1.22l2.324 13.903c.1.598.695.963 1.242.871l3.199-.535c.547-.091.99-.63.89-1.228L28.92 13.32c-.1-.598-.693-.954-1.24-.863l-3.2.535Z"
+      fill="#fff"
+    />
+  </svg> : <svg
+    width= "3.125rem"
     height="3.125rem"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -17,6 +35,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
       fill="#fff"
     />
   </svg>
+  
 )
 
 export default SvgComponent

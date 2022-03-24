@@ -8,13 +8,25 @@ border: 1px solid #EEEEEE;
 box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.05);
 margin-bottom: 3px;
 
+.searchBar {
+    flex-grow: 1;
+}
+
+ .smLogo {
+            display: none;
+        }
+        .mdLogo {
+            display: block;
+        }
    .headerDisplay {
     display: flex;
     align-items: center;
+   
         .appDetails {
     display: flex;
     flex-direction: column;
     margin-left: 15px;
+  
 
         h3 {
             font-size: 18px;
@@ -27,10 +39,14 @@ margin-bottom: 3px;
         }
     }
    }
-
+   
     .actions {
     display: flex;
     align-items: center;
+
+     .searchIcon {
+            display: none;
+        }
 
     .cart {
         cursor: pointer;
@@ -91,4 +107,57 @@ text-align: center;
     transition: all 1s;
 
     }
+}
+.mobileSearchNav {
+display: none;
+}
+@media(max-width: 650px){
+ .Header {
+    padding: 15px;
+ 
+.mobileSearchNav {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background-color: #FFFFFF;
+
+    .backArrow {
+        margin-right: 27px;
+    }
+}
+.searchBar {
+display:none;
+   }
+    .headerDisplay {
+       
+    .appDetails {
+    margin-left: 9px;
+        h3 {
+            font-size: 14px !important;
+        }
+        h5{
+            display: none;
+       }   }
+    }
+
+    .actions {
+        .searchIcon {
+            display: block;
+        margin-right: 25px;
+
+        }
+    }
+
+    .smLogo {
+              display: block;
+          }
+          .mdLogo {
+              display: none;
+          }
+ }
 }

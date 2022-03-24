@@ -2,7 +2,8 @@
     display: flex;
     align-items: center;
     border: 1px solid #DDDDDD;
-    width: 541px;
+    width: 50%;
+    margin:auto;
     height: 40px;
     background-color: white;
     color: #999999;
@@ -11,6 +12,7 @@
         border: none;
         outline: none;
         flex: 1;
+        width: 100%;
         padding: 0 21px;
     color: #999999
     }
@@ -25,4 +27,9 @@
     cursor: pointer;
 
     }
+}
+@media(max-width: 650px){
+   .SearchInput {
+width:100%;   
+} 
 }
