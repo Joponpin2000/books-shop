@@ -17,7 +17,10 @@ const BookCard = ({ book }: IProps) => {
   return (
     <div className={styles.BookCard}>
       <div className={styles.cardImg}>
-        <Imager src={book.image_url} width="110px" height="183px" />
+        <img src={book.image_url}
+          width="100%"
+          height="100%"
+        />
       </div>
 
       <div className={styles.cardDetails}>

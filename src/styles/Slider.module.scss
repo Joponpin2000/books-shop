@@ -1,20 +1,8 @@
 .SmBookCarousel {
-  margin-bottom: 65px;
+  margin-bottom: 49px;
 }
 .LgBookCarousel {
   margin-bottom: 65px;
-}
-
-@media only screen and (min-width: 768px) {
-  .SmBookCarousel {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 595px) {
-  .LgBookCarousel {
-    display: none;
-  }
 }
 
 .slide {
@@ -186,4 +174,26 @@
 .button__bar li button:hover,
 .button__bar li button:focus {
   background: white;
+}
+
+@media only screen and (min-width: 768px) {
+  .SmBookCarousel {
+    display: none;
+  }
+}
+
+
+@media only screen and (max-width: 595px) {
+  .LgBookCarousel {
+    display: none;
+
+  }
+
+.slide {
+  height: 210px;
+}
+
+.button__bar {
+  margin-top: 28px;
+}
 }
