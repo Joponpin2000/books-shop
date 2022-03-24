@@ -15,7 +15,7 @@ const SearchBookListing = ({searchText = "", bookList = []}: IProps) => {
   return (
     <div className={styles.SearchBookListing}>
       <SectionHeader
-        title={`${bookList.length} results found for '${searchText}'`}
+        title={`${bookList?.length} results found for '${searchText}'`}
       />
 
       <div className={styles.container}>
