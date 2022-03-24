@@ -17,7 +17,6 @@
     "redux": "^4.1.2",
     "redux-thunk": "^2.4.1",
     "sass": "^1.49.9",
-    "simpler-state": "^1.1.0",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {

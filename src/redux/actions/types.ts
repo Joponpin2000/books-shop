@@ -3,6 +3,7 @@ import { IBookType } from "../../utils/helpers";
 
 export const CART_ADD_ITEM = "CART_ADD_ITEM";
 export const CART_REMOVE_ITEM = "CART_REMOVE_ITEM";
+export const SET_CART_MODAL = "SET_CART_MODAL";
 
 export const SET_SEARCH = "SET_SEARCH";
 export const CLEAR_SEARCH = "CLEAR_SEARCH";
@@ -22,6 +23,7 @@ export interface IReduxState {
 
 export interface ICartReduxState {
   cartItems: ICartType[];
+  isCartModalOpen: boolean;
  }
 
 export interface ISearchReduxState {

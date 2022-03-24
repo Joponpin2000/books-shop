@@ -2,30 +2,30 @@ import { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import BackButton from "../components/atoms/BackButton";
-import ProductDetailsCard from "../components/molecules/ProductDetailsCard";
+import ProductDetailsCard from "../components/molecules/BookDetailsCard";
 import PageLayout from "../components/organisms/PageLayout";
-import styles from "../styles/ProductDetails.module.scss"
+import styles from "../styles/BookDetails.module.scss";
 import { IBookType } from "../utils/helpers";
-import bookList from "../utils/data.json"
+import bookList from "../utils/books.json";
 
 const BookDetails: NextPage = () => {
-    const router = useRouter();
-    const { book } = router.query;
-    const [bookData, setBookData] = useState<IBookType >();
+  const router = useRouter();
+  const { book } = router.query;
+  const [bookData, setBookData] = useState<IBookType>();
 
-    useEffect(() => {
-      var found = bookList.data.find(b => b.id.toString() === book)
-      setBookData(found)
-    }, [])
+  useEffect(() => {
+    var found = bookList.data.find((b) => b.id.toString() === book);
+    setBookData(found);
+  }, [book]);
 
   return (
     <PageLayout>
       <div className={styles.ProductDetails}>
-              <BackButton onClick={() => router.back()} />
-              <ProductDetailsCard />
+        <BackButton onClick={() => router.back()} />
+        {bookData && <ProductDetailsCard book={bookData} />}
       </div>
     </PageLayout>
   );
 };
 
-export default BookDetails
+export default BookDetails;

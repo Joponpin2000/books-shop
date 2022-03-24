@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export const Imager  = Image;
 
-   export const parseDate = (dateString: string) => {
+   export const parseDate = (dateString: string, full = false) => {
       const d = new Date(dateString);
-      return d.getFullYear();
+      return full ? d.toDateString() : d.getFullYear();
     }
 export const totalCartAmount = (cartItems: any[]) => {
   return Number(

@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/actions/cartActions";
 import StarRating from "./StarRating";
 import HeartIcon from "../atoms/vectors/HeartIcon";
-import { IBookType, Imager, parseDate, renderTags } from "../../utils/helpers";
+import { IBookType, parseDate, renderTags } from "../../utils/helpers";
 import styles from "../../styles/BookCard.module.scss";
 import CartIcon from "../atoms/vectors/CartIcon";
 
@@ -48,11 +48,11 @@ const BookCard = ({ book }: IProps) => {
         <div className={styles.row}>
           <span className={styles.priceTag}>${book.price}</span>
           {book.available_copies > 0 ? (
-            <span className={styles.availableCopies}>
+            <p className={styles.availableCopies}>
               {book.available_copies} Copies Available
-            </span>
+            </p>
           ) : (
-            <span className={styles.outOfStock}>Out of stock</span>
+            <p className={styles.outOfStock}>Out of stock</p>
           )}
         </div>
         {book.available_copies > 0 && (

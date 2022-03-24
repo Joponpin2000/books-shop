@@ -1,7 +1,7 @@
 
 import SectionHeader from "../molecules/SectionHeader";
 import BookCarousel from "./BookCarousel";
-import bookList from "../../utils/data.json";
+import bookList from "../../utils/books.json";
 import styles from "../../styles/FeatureSection.module.scss";
 
 const FeatureSection = () => {

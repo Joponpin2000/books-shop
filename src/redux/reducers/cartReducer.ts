@@ -3,10 +3,12 @@ import {
   CART_REMOVE_ITEM,
   IACTIONTYPE,
   ICartReduxState,
+  SET_CART_MODAL
 } from "../actions/types";
 
 const defaultState: ICartReduxState = {
   cartItems: [],
+  isCartModalOpen: false,
 };
 
 export default function cartReducer(
@@ -23,17 +25,26 @@ export default function cartReducer(
           cartItems: state.cartItems.map((x) =>
             x.book.id === product.book.id ? item : x
           ),
+          isCartModalOpen: true,
         };
       } else {
         return {
           ...state,
           cartItems: [...state.cartItems, item],
+          isCartModalOpen: true,
         };
       }
 
     case CART_REMOVE_ITEM:
       return {
+        ...state,
         cartItems: state.cartItems.filter((x) => x.book.id !== action.payload),
+      };
+
+    case SET_CART_MODAL:
+       return {
+        ...state,
+        isCartModalOpen: action.payload,
       };
 
     default:

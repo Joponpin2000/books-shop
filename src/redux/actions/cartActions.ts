@@ -1,6 +1,7 @@
 import {
   CART_ADD_ITEM,
   CART_REMOVE_ITEM,
+  SET_CART_MODAL
 } from "./types";
 
 export const addToCart =
@@ -19,3 +20,9 @@ export const removeFromCart =
       payload: bookId,
     });
 
+
+export const setCartModal =
+  (value: boolean) => ({
+      type: SET_CART_MODAL,
+      payload: value,
+    });

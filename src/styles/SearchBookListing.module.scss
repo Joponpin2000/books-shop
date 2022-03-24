@@ -1,8 +1,16 @@
 .SearchBookListing {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(403px, 100%), 1fr));
+    margin: 0 40px 10px;
+    gap: 40px 74px;
+  }
+}
+
+@media only screen and (max-width: 595px) {
+  .SearchBookListing {
     .container {
-        display: grid;
-       grid-template-columns: repeat(auto-fill, minmax(min(403px, 100%),1fr));
-        margin: 0 40px 10px;
-        gap: 40px 74px;
+      margin: 0 30px;
     }
+  }
 }

@@ -1,6 +1,6 @@
 import SectionHeader from "../molecules/SectionHeader";
 import BookCard from "../molecules/BookCard";
-import bookList from "../../utils/data.json";
+import bookList from "../../utils/books.json";
 import styles from "../../styles/BookListingSection.module.scss";
 import Link from "next/link";
 

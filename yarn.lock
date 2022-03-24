@@ -10,7 +10,7 @@
     core-js-pure "^3.20.2"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.10.2", "@babel/runtime@^7.13.10", "@babel/runtime@^7.15.4", "@babel/runtime@^7.16.3", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.10.2", "@babel/runtime@^7.15.4", "@babel/runtime@^7.16.3", "@babel/runtime@^7.9.2":
   version "7.17.8"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.17.8.tgz#3e56e4aff81befa55ac3ac6a0967349fd1c5bca2"
   integrity sha512-dQpEpK0O9o6lj6oPu0gRDbbnk+4LeHlNcBpspf6Olzt3GIX4P1lWF1gS+pHLDFlaJvbR6q7jCfQ08zA4QJBnmA==
@@ -1652,13 +1652,6 @@ side-channel@^1.0.4:
     call-bind "^1.0.0"
     get-intrinsic "^1.0.2"
     object-inspect "^1.9.0"
-
-simpler-state@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/simpler-state/-/simpler-state-1.1.0.tgz#38076cd48727ae129df34f81c51d521e244bb8ac"
-  integrity sha512-3qt70MFqNT4vLt68DhnoYROKNTpNrmR5PHee+fhFge2x6edN7ZRrj6lNYCe4AIn9llv+M0zVqJXC1hKNfnP5GA==
-  dependencies:
-    "@babel/runtime" "^7.13.10"
 
 slash@^3.0.0:
   version "3.0.0"
