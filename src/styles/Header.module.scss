@@ -112,6 +112,8 @@ text-align: center;
 .mobileSearchNav {
 display: none;
 }
+
+
 @media(max-width: 650px){
  .Header {
     padding: 15px;
@@ -145,13 +147,26 @@ display: none;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 50;
     background-color: #FFFFFF;
+        z-index: 200;
+    transition: all .7s;
+    width: 100%;
 
     .backArrow {
         margin-right: 27px;
     }
 }
+
+    .hideMobileSearchNav {
+        position: absolute;
+    left: 0;
+    right: 0;
+    display: block;
+    margin-top: -30px;
+    transition: all 1s;
+    z-index: -20;
+
+    }
 .searchBar {
 display:none;
    }

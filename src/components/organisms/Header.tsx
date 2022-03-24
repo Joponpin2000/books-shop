@@ -57,7 +57,7 @@ const Header = () => {
         </button>
       </div>
       {openMobileSearchBar && (
-        <div className={styles.mobileSearchNav}>
+        <div className={openMobileSearchBar ? styles.mobileSearchNav : styles.hideMobileSearchNav}>
           <button
             onClick={() => {
               dispatch(closeSearchModal());
