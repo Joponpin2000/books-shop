@@ -17,8 +17,8 @@ import Link from "next/link";
 const Header = () => {
   const dispatch = useDispatch();
   const { cart, searcher } = useSelector((state: IReduxState) => state);
-  const { cartItems, isCartModalOpen } = cart;
-  const { search } = searcher;
+  const { cartItems } = cart;
+  const { search,isSearchModalOpen } = searcher;
 
   const [openMobileSearchBar, setOpenMobileSearchBar] = useState<boolean>(false)
 
@@ -47,33 +47,46 @@ const Header = () => {
           <SearchIcon className={styles.searchIcon} />
         </button>
         <Link href="/">
-        <a> <LightIcon size="sm" className={styles.smLogo} />
-        <LightIcon size="md" className={styles.mdLogo} />
-        </a>
+          <a>
+            {" "}
+            <LightIcon size="sm" className={styles.smLogo} />
+            <LightIcon size="md" className={styles.mdLogo} />
+          </a>
         </Link>
-        <button onClick={() =>  dispatch(setCartModal((true)))} className={styles.cart}>
+        <button
+          onClick={() => dispatch(setCartModal(true))}
+          className={styles.cart}
+        >
           <CartIcon />
-          <span className={styles.badge} >{cartItems?.length}</span>
+          <span className={styles.badge}>{cartItems?.length}</span>
         </button>
       </div>
-      {openMobileSearchBar && (
-        <div className={openMobileSearchBar ? styles.mobileSearchNav : styles.hideMobileSearchNav}>
-          <button
-            onClick={() => {
-              dispatch(closeSearchModal());
-              setOpenMobileSearchBar(false);
-            }}
-            className={styles.backArrow}
-          >
-            <BackIcon />
-          </button>
-          <SearchInput
-            value={search}
-            placeholder="Search books, genres, authors, etc."
-          />
-        </div>
+
+      <div
+        className={
+          openMobileSearchBar
+            ? styles.mobileSearchNav
+            : styles.hideMobileSearchNav
+        }
+      >
+        <button
+          onClick={() => {
+            dispatch(closeSearchModal());
+            setOpenMobileSearchBar(false);
+          }}
+          className={styles.backArrow}
+        >
+          <BackIcon />
+        </button>
+        <SearchInput
+          value={search}
+          placeholder="Search books, genres, authors, etc."
+        />
+      </div>
+
+      {!isSearchModalOpen && openMobileSearchBar && (
+        <div className={styles.searchOverlay}></div>
       )}
-     
     </header>
   );
 };
