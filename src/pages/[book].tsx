@@ -7,6 +7,7 @@ import PageLayout from "../components/organisms/PageLayout";
 import styles from "../styles/BookDetails.module.scss";
 import { IBookType } from "../utils/helpers";
 import bookList from "../utils/books.json";
+import  Link from 'next/link';
 
 const BookDetails: NextPage = () => {
   const router = useRouter();
@@ -21,7 +22,11 @@ const BookDetails: NextPage = () => {
   return (
     <PageLayout>
       <div className={styles.ProductDetails}>
-        <BackButton onClick={() => router.back()} />
+        <Link href="/">
+          <a>
+            <BackButton onClick={() => {}} />
+          </a>
+        </Link>
         {bookData && <ProductDetailsCard book={bookData} />}
       </div>
     </PageLayout>
