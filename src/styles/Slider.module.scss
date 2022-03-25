@@ -5,11 +5,14 @@
   margin-bottom: 65px;
 }
 
+.MdBookCarousel {
+  margin-bottom: 65px;
+}
+
 .slide {
   position: relative;
   width: 220px;
   height: 330px;
-  // max-height: auto;
     align-items: stretch;
 }
 
@@ -180,17 +183,36 @@
   background: white;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen   
+and (min-width: 1024px)     {
+   .SmBookCarousel {
+    display: none;
+  }
+
+   .MdBookCarousel {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) 
+and (max-width : 1007px)   {
   .SmBookCarousel {
+    display: none;
+  }
+   .LgBookCarousel {
     display: none;
   }
 }
 
 
-@media only screen and (max-width: 595px) {
+@media only screen   
+and (max-width : 640px) {
   .LgBookCarousel {
     display: none;
+  }
 
+   .MdBookCarousel {
+    display: none;
   }
 
 .slide {

@@ -7,7 +7,7 @@ import styles from "../../styles/Slider.module.scss";
 import FeatureBookDetails from "../molecules/FeatureBookDetails";
 
 interface IProps {
-  device?: "mobile" | "laptop";
+  device?: "mobile" | "laptop" | "tablet";
   books: IBookType[];
 }
 
@@ -20,7 +20,7 @@ const BookCarousel = ({ device, books }: IProps) => {
   var settings = {
     infinite: true,
     speed: 500,
-    slidesToShow: device == "mobile" ? 2.5 : 6,
+    slidesToShow: device == "mobile" ? 2.5 : device === "tablet" ? 4.5 : 6,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -62,7 +62,11 @@ const BookCarousel = ({ device, books }: IProps) => {
   return (
     <div
       className={
-        device === "mobile" ? styles.SmBookCarousel : styles.LgBookCarousel
+        device === "mobile"
+          ? styles.SmBookCarousel
+          : device === "tablet"
+          ? styles.MdBookCarousel
+          : styles.LgBookCarousel
       }
     >
       <Slider {...settings}>

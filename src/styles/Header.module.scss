@@ -1,61 +1,60 @@
 .Header {
-    padding: 25px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #FFFFFF;
-border: 1px solid #EEEEEE;
-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.05);
-margin-bottom: 3px;
+  padding: 25px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.05);
+  margin-bottom: 3px;
 
-.searchBar {
+  .searchBar {
     flex-grow: 1;
-}
+  }
 
- .smLogo {
-            display: none;
-        }
-        .mdLogo {
-            display: block;
-        }
-   .headerDisplay {
+  .smLogo {
+    display: none;
+  }
+  .mdLogo {
+    display: block;
+  }
+  .headerDisplay {
     display: flex;
     align-items: center;
-   
-        .appDetails {
-    display: flex;
-    flex-direction: column;
-    margin-left: 15px;
-  
 
-        h3 {
-            font-size: 18px;
-            margin-bottom: 3px;
-        }
-        h5 {
-            color: #AAAAAA;
-            font-size: 12;
-            font-style: italic;
-        }
+    .appDetails {
+      display: flex;
+      flex-direction: column;
+      margin-left: 15px;
+
+      h3 {
+        font-size: 18px;
+        margin-bottom: 3px;
+      }
+      h5 {
+        color: #aaaaaa;
+        font-size: 12;
+        font-style: italic;
+      }
     }
-   }
-   
-    .actions {
+  }
+
+  .actions {
     display: flex;
     align-items: center;
 
-     .searchIcon {
-            display: none;
-        }
+    .searchIcon {
+      display: none;
+    }
 
     .cart {
-        cursor: pointer;
-        margin-left: 29px;
-        position: relative;
-        background-color: #FFFFFF;
-        border: none;
+      cursor: pointer;
+      margin-left: 29px;
+      position: relative;
+      background-color: #ffffff;
+      border: none;
 
-    .badge {
+      .badge {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -63,161 +62,155 @@ margin-bottom: 3px;
         position: absolute;
         color: white;
         font-size: 12px;
-       left: calc(50% - 20px/2 + 10px);
-top: calc(50% - 20px/2 - 10px);
+        left: calc(50% - 20px / 2 + 10px);
+        top: calc(50% - 20px / 2 - 10px);
 
-background: #65C100;
-border-radius: 10px;
-width: 20px;
-height: 20px;
-text-align: center;
+        background: #65c100;
+        border-radius: 10px;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+      }
     }
-    }
-    }
+  }
 
-    .cartOverlay {
-        
-        background-color: rgba(0,0,0,0.2);
-        position:fixed;
-        right:0;
-        left:0;
-        top:0;
-        bottom:0;
-        height:100vh;
-        width:100vw;
-        z-index:150;
-    }
-
-.cartModal {
-        position: absolute;
-        right: 0;
-        z-index: 200;
-        top: 0;
+  .cartOverlay {
+    background-color: rgba(0, 0, 0, 0.2);
+    position: fixed;
     right: 0;
-    transition: all .7s;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 150;
+  }
+
+  .cartModal {
+    position: absolute;
+    right: 0;
+    z-index: 200;
+    top: 0;
+    right: 0;
+    transition: all 0.7s;
     background-color: gray;
     width: 100%;
-    }
-    
-    .hideModal {
-        position: absolute;
-        top: 0;
+  }
+
+  .hideModal {
+    position: absolute;
+    top: 0;
     right: 0;
     margin-right: -30vw;
     transition: all 1s;
     z-index: -20;
-
-    }
+  }
 }
 .mobileSearchNav {
-display: none;
+  display: none;
 }
 
 .hideMobileSearchNav {
-display: none;
-
+  display: none;
 }
 
-@media(max-width: 650px){
- .Header {
+@media (max-width: 650px) {
+  .Header {
     padding: 15px;
- 
-.cartModal {
-        position: absolute;
-        right: 0;
-        z-index: 200;
-        top: 0;
-    left: 0;
-    transition: all .7s;
-    background-color: gray;
-    width: 100%;
+
+    .cartModal {
+      position: absolute;
+      right: 0;
+      z-index: 200;
+      top: 0;
+      left: 0;
+      transition: all 0.7s;
+      background-color: gray;
+      width: 100%;
     }
-    
+
     .hideModal {
-        display: none;
-        position: absolute;
-        top: 0;
-    right: 0;
-    margin-right: -100vw;
-    transition: all 1s;
-    z-index: -20;
-
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-right: -100vw;
+      transition: all 1s;
+      z-index: -20;
     }
-.mobileSearchNav {
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin-top: 0;
-    background-color: #FFFFFF;
-        z-index: 200;
-    transition: all .7s;
-    width: 100%;
+    .mobileSearchNav {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin-top: 0;
+      background-color: #ffffff;
+      z-index: 200;
+      transition: all 0.7s;
+      width: 100%;
 
-    .backArrow {
+      .backArrow {
         margin-right: 27px;
+      }
     }
-}
-  .searchOverlay {
-        position: absolute;
-        top:0;
-        right: 0;
-        left: 0;
-        background-color: rgba(0,0,0,0.2);
-        position:fixed;
-        height:100vh;
-        width:100vw;
-        z-index:150;
+    .searchOverlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.2);
+      position: fixed;
+      height: 100vh;
+      width: 100vw;
+      z-index: 150;
     }
     .hideMobileSearchNav {
-        position: absolute;
-    left: 0;
-    right: 0;
-    margin-top: -30%;
-    transition: all .7s;
-    z-index: -20;
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    background-color: #FFFFFF;
-    width: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin-top: -30%;
+      transition: all 0.7s;
+      z-index: -20;
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      background-color: #ffffff;
+      width: 100%;
 
-    .backArrow {
+      .backArrow {
         margin-right: 27px;
+      }
     }
+    .searchBar {
+      display: none;
     }
-.searchBar {
-display:none;
-   }
     .headerDisplay {
-       
-    .appDetails {
-    margin-left: 9px;
+      .appDetails {
+        margin-left: 9px;
         h3 {
-            font-size: 14px !important;
+          font-size: 14px !important;
         }
-        h5{
-            display: none;
-       }   }
+        h5 {
+          display: none;
+        }
+      }
     }
 
     .actions {
-        .searchIcon {
-            display: block;
+      .searchIcon {
+        display: block;
         margin-right: 25px;
-
-        }
+      }
     }
 
     .smLogo {
-              display: block;
-          }
-          .mdLogo {
-              display: none;
-          }
- }
- 
+      display: block;
+    }
+    .mdLogo {
+      display: none;
+    }
+  }
 }
